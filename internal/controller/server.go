@@ -17,7 +17,7 @@ type Server struct {
 func (s *Server) Initialize(config *config.Config) {
 	db, err := gorm.Open(sqlite.Open(config.DB.Name), &gorm.Config{})
 	if err != nil {
-		log.Fatalf("Failed to connect database %v", err)
+		log.Printf("Failed to connect database %v", err)
 	}
 	s.DB = db
 	fmt.Println("Database Connected ")
